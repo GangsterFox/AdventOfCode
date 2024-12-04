@@ -3,7 +3,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const input = fs.readFileSync(path.join(__dirname, "./input.txt"), "utf-8");
+const input = fs.readFileSync(path.join(__dirname, "./input"), "utf-8");
 
 function recursiveArrToInt(arr) {
     return arr.map((el) => Array.isArray(el) ? recursiveArrToInt(el) : parseFloat(el));

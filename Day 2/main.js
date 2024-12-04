@@ -1,5 +1,5 @@
 const fs = require("fs");
-const input = fs.readFileSync("./input.txt", "utf-8");
+const input = fs.readFileSync("./input", "utf-8");
 
 let counter = 0;
 

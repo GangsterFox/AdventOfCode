@@ -3,7 +3,7 @@ const fs = require('fs');
 function readInput() {
   let left = [];
   let right = [];
-  const data = fs.readFileSync('input.txt', 'utf8');
+  const data = fs.readFileSync('input', 'utf8');
   const lines = data.split('\n');
   for (let line of lines) {
     if (line.trim() === '') continue; // Skip empty lines

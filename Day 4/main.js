@@ -42,5 +42,33 @@ function countOccurrences(grid) {
 
     return count;
 }
+
 const occurrences = countOccurrences(grid);
-console.log(`Total: ${occurrences}`);
+console.log(`Total part 1: ${occurrences}`); 
+
+// part 2, code taken from ajm-gov, Sorry but I started getting brain damage
+
+function partTwo(grid) {
+    let totalCount = 0;
+    const rows = grid.length;
+    const cols = grid.at(0).length;
+
+    // Loop through grid to assess the X shape of each letter that is within the X boundaries
+    for (let row = 1; row < rows - 1; row++) {
+        for (let col = 1; col < cols - 1; col++) {
+            // Form a string based on the "X" shape for the current row,col position
+            const xGridString = grid[row - 1][col - 1] + grid[row][col] + grid[row + 1][col + 1] + grid[row - 1][col + 1] + grid[row][col] + grid[row + 1][col - 1];
+
+            // These strings will form an acceptable X grid
+            const acceptableXGrids = ["SAMSAM", "SAMMAS", "MASSAM", "MASMAS"]
+
+            if (acceptableXGrids.includes(xGridString)) {
+                totalCount++;
+            }
+        }
+    }
+
+    console.log("Part two solution is ", totalCount);
+}
+
+partTwo(grid);
